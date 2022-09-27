@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.container{
+background: #ab97b0;
+}
+
+.columns{
+	display: flex;
+	justify-content: space-around;
+}
+
+.form-control{
+	background: #f8f9fa;
+}
+
+.submit-btn{
+	border-radius: 25px;
+	border: 1px solid rgb(140, 108, 147);
+	background: rgb(140, 108, 147);
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+.submit-btn:hover{
+	border-radius: 25px;
+	border: 1px solid rgb(140, 108, 147);
+	background: rgb(140, 108, 147);
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+</style>
+<title th:text="${title}">Hello, world!</title>
+</head>
+<body style="background: rgb(140, 108, 147)">
+	<div class="container border-light rounded shadow-lg mt-5 mb-5">
+		<div>
+			<h1 class="text-center mt-5">Employee Contact Form</h1>
+			<a th:href = "@{/}"><i class="fa fa-arrow-circle-left" style="font-size:36px">Go Back</i></a>
+		</div>
+		<hr />
+		<div class="col-md-8 offset-md-2">
+		
+		<form action="" th:object="${contact}" enctype="multipart/form-data"
+			method="post" th:action="@{/process-contact}">
+			
+			<!-- Employee full Name -->
+			<div class="form-group">
+				<label>Employee full Name</label>
+				<input type="text" class="form-control" id="fullName" name="fullName" required>
+			</div>
+			
+			<!-- Job Title -->
+			<div class="form-group">
+				<label>Job Title</label>
+				<input type="text" class="form-control" id="jobTitle" name="jobTitle" required>
+			</div>
+			
+			<!-- Phone Number -->
+			<div class="form-group">
+				<label>Phone Number</label>
+				<input type="number" class="form-control" id="phoneNumber" name="phoneNumber" required>
+			</div>
+			
+			<!-- Email -->
+			<div class="form-group">
+				<label>Email</label>
+				<input type="email" class="form-control" id="email" name="email" required>
+			</div>
+			
+			<div class="columns">
+				<!-- Address -->
+				<div class="form-group">
+					<label>Address</label><br />
+					<textarea placeholder="Enter Address" name="address" id="address" rows="5" class="form-control rounded"></textarea>
+				</div>
+				
+				<!-- city -->
+				<div class="form-group">
+					<label>City</label>&nbsp;
+					<input type="text" class="form-control" id="city" name="city" required>
+				</div>
+				
+				<!-- state -->
+				<div class="form-group">
+					<label>State</label>&nbsp;
+					<input type="text" class="form-control" id="state" name="state" required>
+				</div>
+			</div>
+			
+			<!-- Primary Emergency Contact -->
+			<div class="form-group">
+				<label>Primary Emergency Contact</label>&nbsp;
+				<input type="text" class="form-control" id="primaryEmergencyContact" name="primaryEmergencyContact" required>
+			</div>
+			
+			<!-- Phone Number1 -->
+			<div class="form-group">
+				<label>Phone Number</label>&nbsp;
+				<input type="number" class="form-control" id="phoneNumber1" name="phoneNumber1" required>
+			</div>
+			
+			<!-- Relationship1 -->
+			<div class="form-group">
+				<label>Relationship</label>&nbsp;
+				<input type="text" class="form-control" id="relationship1" name="relationship1" required>
+			</div>
+			
+			<!-- Secondary Emergency Contact -->
+			<div class="form-group">
+				<label>Secondary Emergency Contact</label>&nbsp;
+				<input type="text" class="form-control" id="secondaryEmergencyContact" name="secondaryEmergencyContact" required>
+			</div>
+			
+			<!-- Phone Number2 -->
+			<div class="form-group">
+				<label>Phone Number</label>&nbsp;
+				<input type="number" class="form-control" id="phoneNumber2" name="phoneNumber2" required>
+			</div>
+			
+			<!-- relationship2 -->
+			<div class="form-group">
+				<label>Relationship</label>&nbsp;
+				<input type="text" class="form-control" id="relationship2" name="relationship2" required>
+			</div>
+			
+			<div class="container text-right mt-5 pb-5">
+				<button class="btn btn-primary submit-btn">Submit</button>
+			</div>
+		</form>
+		</div>
+
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+</html>

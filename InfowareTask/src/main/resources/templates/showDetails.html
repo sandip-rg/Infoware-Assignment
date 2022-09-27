@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.text-tr, label{
+text-transform: uppercase;
+}
+</style>
+
+<title th:text="${title}">Document</title>
+
+<style>
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.columns{
+	display: flex;
+	justify-content: space-around;
+}
+</style>
+</head>
+<body>
+
+	<a th:href="@{/}"><i class="fa fa-arrow-circle-left"
+		style="font-size: 36px">Go Back</i></a>
+		<!-- <input type="hidden" th:text="${id}" /> -->
+		<div class="container border-light bg-light rounded shadow-lg mt-3 mb-5">
+			<h1 class="text-tr text-center" th:text=${contact.fullName}></h1>
+			<br />
+			
+			<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">JOB</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td th:text=${contact.jobTitle}></td>
+      <td th:text=${contact.phoneNumber}></td>
+      <td th:text=${contact.email}></td>
+    </tr>
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col">city</th>
+      <th scope="col">state</th>
+    </tr>
+    <tr>
+      <td th:text=${contact.address}></td>
+      <td th:text=${contact.city}></td>
+      <td th:text=${contact.state}></td>
+    </tr>
+    <tr>
+      <th scope="col">Primary Emergency Contact</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Relation</th>
+    </tr>
+    <tr>
+      <td th:text=${contact.primaryEmergencyContact}></td>
+      <td th:text=${contact.phoneNumber1}></td>
+      <td th:text=${contact.relationship1}></td>
+    </tr>
+    <tr>
+      <th scope="col">Secondary Emergency Contact</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Relation</th>
+    </tr>
+    <tr>
+      <td th:text=${contact.secondaryEmergencyContact}></td>
+      <td th:text=${contact.phoneNumber2}></td>
+      <td th:text=${contact.relationship2}></td>
+    </tr>
+  </tbody>
+</table>
+		</div>
+</body>
+</html>
